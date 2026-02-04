@@ -18,23 +18,28 @@ class NumericQuestion(
 class Question<T>(
     val questionText: String,
     val answer: T,
-    val difficulty: String
+    val difficulty: Difficulty
 )
+enum class Difficulty{
+    EASY,
+    MEDIUM,
+    HARD
+}
 fun main(){
     val question = Question(
         "речка спятила с ума по домам  пошла сама",
         "водопад",
-        "medium"
+        Difficulty.MEDIUM
     )
     val question2 = Question(
         "небо зеленое правда или ложт",
         false,
-        "easy"
+    Difficulty.EASY
     )
     val question3 = Question(
         "сколько дней между плнолуниями",
         28,
-        "hard"
+        Difficulty.HARD
     )
     println(question.answer)
     println(question2.answer)
