@@ -25,7 +25,11 @@ enum class Difficulty{
     MEDIUM,
     HARD
 }
-fun main(){
+object  StudentProgress{
+    var total : Int = 10
+    var answered : Int = 3
+}
+class Quiz{
     val question = Question(
         "речка спятила с ума по домам  пошла сама",
         "водопад",
@@ -34,15 +38,21 @@ fun main(){
     val question2 = Question(
         "небо зеленое правда или ложт",
         false,
-    Difficulty.EASY
+        Difficulty.EASY
     )
     val question3 = Question(
         "сколько дней между плнолуниями",
         28,
         Difficulty.HARD
     )
-    println(question.toString())
-    println(question2.answer)
-    println(question3.answer)
+    companion object StudentProgress{
+        var total : Int = 10
+        var answered : Int = 3
+    }
+
+}
+
+fun main(){
+    println("${Quiz.answered} of ${Quiz.total} answered")
 
 }
